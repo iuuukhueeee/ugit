@@ -1,9 +1,10 @@
-import argparse
+import argparse, os
+from . import data
 
 
 def init(args):
-    print('Goodbye World')
-
+    if data.init():
+        print(f'Initialized empty ugit respository in {os.getcwd()}/{data.GIT_DIR}')
 
 def parse_args():
     parser = argparse.ArgumentParser()
